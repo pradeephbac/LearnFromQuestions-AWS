@@ -88,7 +88,7 @@
 					
 						<div style="display:flex;"><h4>Explanations</h4> <p style="font-size: 15px;
     margin-left: 15px;">- first try your self then <u  ng-click="flip($index+1)"  style="cursor:pointer;"><i>click to see answer</i></u></p></div>
-						<div class="comment-cage card" id="{{$parent.$index+1}}_comment" ng-init="flip($parent.$index+1)"  ng-click="flip($parent.$index+1)"  ng-repeat="comment in que.comments" style="    display: flex;justify-content: flex-start;    display: flex;
+						<div class="comment-cage card flipped" id="{{$parent.$index+1}}_comment" ng-init="flip($parent.$index+1)"  ng-click="flip($parent.$index+1)"  ng-repeat="comment in que.comments" style="    display: flex;justify-content: flex-start;    display: flex;
     justify-content: flex-start;
     background: #fff;
     padding: 10px;
