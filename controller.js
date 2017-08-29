@@ -5,6 +5,10 @@ function mainController($scope, $http) {
 		var id="#"+index+"_comment";
 		 $(id).toggleClass('flipped');
 	}
+	$scope.showPanel=false;
+	$scope.showInput =function(){
+		$scope.showPanel =!	$scope.showPanel;
+	}
 	$scope.questions=[
 	{
 		question : " www.dropbag.com is a website where you have file sharing and storing services like Google Drive and Google Dropbox. During the sync up from desktop you accidently deleted an important file. Which of the simple storage service will help you retrieve the deleted file?",

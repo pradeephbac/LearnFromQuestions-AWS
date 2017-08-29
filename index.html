@@ -18,6 +18,29 @@
     -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
+/* Social Icons */
+#social_side_links {
+	position: fixed;
+  top: 70px;
+  left: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 99;
+}
+
+#social_side_links li a {display: block;}
+
+#social_side_links li a img {
+	display: block;
+	    max-width: 44px;
+    padding: 11px;
+  -webkit-transition:  background .2s ease-in-out;
+  -moz-transition:  background .2s ease-in-out;
+  -o-transition:  background .2s ease-in-out;
+  transition:  background .2s ease-in-out;
+}
+
+#social_side_links li a:hover img {background: rgba(0, 0, 0, .2);}
 	
 	</style>
 	<noscript>
@@ -31,12 +54,21 @@
 </head>
 
 <body ng-controller="mainController">
+<ul id="social_side_links">
+	 <li style="display:flex"><a style="background-color: #c6c9ce;"   target="_blank"><img src="http://www.iconsdb.com/icons/preview/gray/search-2-xxl.png" ng-click="showInput()" alt="" /></a><input style="    width: 350px;
+ width: 350px;color:#000;
+    background: #fff;" ng-show="showPanel" type="text" ng-model="query" placeholder="search tag here"/></li>
+
+	<!--li><a style="background-color: #3c5a96;" href="https://facebook.com" target="_blank"><img src="https://www.dropbox.com/s/xk5pdj8nks1ymdh/facebook-icon.png?raw=1" alt="" /></a></li>
+	<li><a style="background-color: #1dadeb;" href="https://twitter.com" target="_blank"><img src="https://www.dropbox.com/s/c8in3qcf1uqsqrb/twitter-icon.png?raw=1" alt="" /></a></li>
+	<li><a style="background-color: #1178b3;" href="https://linkedin.com" target="_blank"><img src="https://www.dropbox.com/s/pb0a0p7p1pwprue/linkedin-icon.png?raw=1" alt="" /></a></li-->
+</ul>
 
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 
 		<!-- Wrapper -->
-		<div id="wrapper">
+		<div id="wrapper" >
 
 			<!-- Panel (Banner) -->
 			<section class="panel banner right" style="overflow-y:auto">
@@ -55,7 +87,7 @@
 			</section>
 
 			<!-- Panel (Spotlight) -->
-			<section class="panel spotlight medium right" id="first" ng-repeat="que in questions">
+			<section class="panel spotlight medium right" id="first" ng-repeat="que in questions | filter:query">
 				<div class="content">
 					<div style="display:flex;margin:5px;">
 						<h2 class="major">{{$index+1}}</h2>
