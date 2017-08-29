@@ -1,47 +1,45 @@
-<!DOCTYPE HTML>
-<!--
-	Ethereal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html ng-app="app">
+ <html ng-app="app">
 
 <head>
-	<title>Ethereal by HTML5 UP</title>
+	<title>AWS cloud Help</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<style>
-	.card.flipped {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-}
-/* Social Icons */
-#social_side_links {
-	position: fixed;
-  top: 70px;
-  left: 0;
-  padding: 0;
-  list-style: none;
-  z-index: 99;
-}
-
-#social_side_links li a {display: block;}
-
-#social_side_links li a img {
-	display: block;
-	    max-width: 44px;
-    padding: 11px;
-  -webkit-transition:  background .2s ease-in-out;
-  -moz-transition:  background .2s ease-in-out;
-  -o-transition:  background .2s ease-in-out;
-  transition:  background .2s ease-in-out;
-}
-
-#social_side_links li a:hover img {background: rgba(0, 0, 0, .2);}
-	
+		.card.flipped {
+			-webkit-transform: rotateY( 180deg);
+			-moz-transform: rotateY( 180deg);
+			-o-transform: rotateY( 180deg);
+			transform: rotateY( 180deg);
+		}
+		/* Social Icons */
+		
+		#social_side_links {
+			position: fixed;
+			top: 70px;
+			left: 0;
+			padding: 0;
+			list-style: none;
+			z-index: 99;
+		}
+		
+		#social_side_links li a {
+			display: block;
+		}
+		
+		#social_side_links li a img {
+			display: block;
+			max-width: 44px;
+			padding: 11px;
+			-webkit-transition: background .2s ease-in-out;
+			-moz-transition: background .2s ease-in-out;
+			-o-transition: background .2s ease-in-out;
+			transition: background .2s ease-in-out;
+		}
+		
+		#social_side_links li a:hover img {
+			background: rgba(0, 0, 0, .2);
+		}
 	</style>
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
@@ -54,26 +52,27 @@
 </head>
 
 <body ng-controller="mainController">
-<ul id="social_side_links">
-	 <li style="display:flex"><a style="background-color: #c6c9ce;"   target="_blank"><img src="http://www.iconsdb.com/icons/preview/gray/search-2-xxl.png" ng-click="showInput()" alt="" /></a><input style="    width: 350px;
+	<ul id="social_side_links">
+		<li style="display:flex">
+			<a style="background-color: #c6c9ce;cursor:pointer;" target="_blank"><img src="http://www.iconsdb.com/icons/preview/gray/search-2-xxl.png" ng-click="showInput()" alt="" /></a><input style="    width: 350px;
  width: 350px;color:#000;
-    background: #fff;" ng-show="showPanel" type="text" ng-model="query" placeholder="search tag here"/></li>
+    background: #fff;" ng-show="showPanel" type="text" ng-model="query" placeholder="search tag here" /></li>
 
-	<!--li><a style="background-color: #3c5a96;" href="https://facebook.com" target="_blank"><img src="https://www.dropbox.com/s/xk5pdj8nks1ymdh/facebook-icon.png?raw=1" alt="" /></a></li>
+		<!--li><a style="background-color: #3c5a96;" href="https://facebook.com" target="_blank"><img src="https://www.dropbox.com/s/xk5pdj8nks1ymdh/facebook-icon.png?raw=1" alt="" /></a></li>
 	<li><a style="background-color: #1dadeb;" href="https://twitter.com" target="_blank"><img src="https://www.dropbox.com/s/c8in3qcf1uqsqrb/twitter-icon.png?raw=1" alt="" /></a></li>
 	<li><a style="background-color: #1178b3;" href="https://linkedin.com" target="_blank"><img src="https://www.dropbox.com/s/pb0a0p7p1pwprue/linkedin-icon.png?raw=1" alt="" /></a></li-->
-</ul>
+	</ul>
 
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 
 		<!-- Wrapper -->
-		<div id="wrapper" >
+		<div id="wrapper">
 
 			<!-- Panel (Banner) -->
 			<section class="panel banner right" style="overflow-y:auto">
 				<div class="content color0 span-3-75">
-					<h2>Hello, we are  <br /> group of cloud crazies</h2>
+					<h2>Hello, we are <br /> group of cloud crazies</h2>
 					<p>This is <strong>AWS Cloud practice question help</strong>, a free site for wind up with <a href=" ">AWS Cloud</a>. You
 						can contribute with your own questions and answers to this repository for grater good. Hope you dig it :)</p>
 					<p>feel free to comment on answers to share a thought</p>
@@ -81,7 +80,7 @@
 						<li><a href="#first" class="button special color1 circle icon fa-angle-right">Next</a></li>
 					</ul>
 				</div>
-				<div class="image filtered span-1-75" data-position="25% 25%">
+				<div class="image filtered span-1-50" data-position="25% 25%">
 					<img src="images/pic01.jpg" alt="" />
 				</div>
 			</section>
@@ -116,17 +115,23 @@
 						</div>
 					</div>
 
-					<div class="comment-section" style="    margin-top: 40px;" >
-					
-						<div style="display:flex;"><h4>Explanations</h4> <p style="font-size: 15px;
-    margin-left: 15px;">- first try your self then <u  ng-click="flip($index+1)"  style="cursor:pointer;"><i>click to see answer</i></u></p></div>
-						<div class="comment-cage card flipped" id="{{$parent.$index+1}}_comment" ng-init="flip($parent.$index+1)"  ng-click="flip($parent.$index+1)"  ng-repeat="comment in que.comments" style="    display: flex;justify-content: flex-start;    display: flex;
+					<div class="comment-section" style="    margin-top: 40px;">
+
+						<div style="display:flex;">
+							<h4>Explanations</h4>
+							<p style="font-size: 15px;
+    margin-left: 15px;">- first try your self then
+								<u ng-click="flip($index+1)" style="cursor:pointer;"><i>click to see answer</i></u>
+							</p>
+						</div>
+						<div class="comment-cage card flipped" id="{{$parent.$index+1}}_comment" ng-init="flip($parent.$index+1)" ng-click="flip($parent.$index+1)"
+						    ng-repeat="comment in que.comments" style="    display: flex;justify-content: flex-start;    display: flex;
     justify-content: flex-start;
     background: #fff;
     padding: 10px;
     color: #000;
     border-radius: 3px;    margin: 3px;">
-							<div style="font-size: 16px;margin-left:20px;font-style: italic;"   > {{comment.content}}</div>
+							<div style="font-size: 16px;margin-left:20px;font-style: italic;"> {{comment.content}}</div>
 						</div>
 
 					</div>
@@ -149,7 +154,7 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/main.js"></script>
-  
+
 </body>
 
 </html>
