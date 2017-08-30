@@ -86,7 +86,7 @@
 			</section>
 
 			<!-- Panel (Spotlight) -->
-			<section class="panel spotlight medium right" id="first" ng-repeat="que in questions | filter:query">
+			<section class="panel spotlight medium right" id="first" ng-repeat="que in questions | filter:query | orderBy:random">
 				<div class="content">
 					<div style="display:flex;margin:5px;">
 						<h2 class="major">{{$index+1}}</h2>
