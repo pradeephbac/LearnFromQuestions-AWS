@@ -1,0 +1,160 @@
+ <html ng-app="app">
+
+<head>
+	<title>AWS cloud help for beginners</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<style>
+		.card.flipped {
+			-webkit-transform: rotateY( 180deg);
+			-moz-transform: rotateY( 180deg);
+			-o-transform: rotateY( 180deg);
+			transform: rotateY( 180deg);
+		}
+		/* Social Icons */
+		
+		#social_side_links {
+			position: fixed;
+			top: 7px;
+			left: 0;
+			padding: 0;
+			list-style: none;
+			z-index: 99;
+		}
+		
+		#social_side_links li a {
+			display: block;
+		}
+		
+		#social_side_links li a img {
+			display: block;
+			max-width: 44px;
+			padding: 11px;
+			-webkit-transition: background .2s ease-in-out;
+			-moz-transition: background .2s ease-in-out;
+			-o-transition: background .2s ease-in-out;
+			transition: background .2s ease-in-out;
+		}
+		
+		#social_side_links li a:hover img {
+			background: rgba(0, 0, 0, .2);
+		}
+	</style>
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+	<script src="../jquery.min.js"></script>
+	<!-- load jquery -->
+	<script src="../angular.min.js"></script>
+	<!-- load angular -->
+	<script src="controller.js"></script>
+</head>
+
+<body ng-controller="mainController">
+	<ul id="social_side_links">
+		<li style="display:flex">
+			<a style="background-color: #c6c9ce;cursor:pointer;" target="_blank"><img src="http://www.iconsdb.com/icons/preview/gray/search-2-xxl.png" ng-click="showInput()" alt="" /></a><input style="    width: 350px;
+ width: 350px;color:#000;
+    background: #fff;" ng-show="showPanel" type="text" ng-model="query" placeholder="search tag here" /></li>
+
+		<!--li><a style="background-color: #3c5a96;" href="https://facebook.com" target="_blank"><img src="https://www.dropbox.com/s/xk5pdj8nks1ymdh/facebook-icon.png?raw=1" alt="" /></a></li>
+	<li><a style="background-color: #1dadeb;" href="https://twitter.com" target="_blank"><img src="https://www.dropbox.com/s/c8in3qcf1uqsqrb/twitter-icon.png?raw=1" alt="" /></a></li>
+	<li><a style="background-color: #1178b3;" href="https://linkedin.com" target="_blank"><img src="https://www.dropbox.com/s/pb0a0p7p1pwprue/linkedin-icon.png?raw=1" alt="" /></a></li-->
+	</ul>
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Panel (Banner) -->
+			<section class="panel banner right" style="overflow-y:auto">
+				<div class="content color0 span-3-75">
+					<h2>Welcome to <br /> AWS associate architect exam help</h2>
+					<p>This is <strong>AWS Cloud practice question help</strong>, a free site for wind up with <a href=" ">AWS Cloud</a>. You
+						can contribute with your own questions and answers to this repository for grater good. Hope you dig it :)</p>
+					<p>feel free to comment on answers to share a thought</p>
+					<ul class="actions">
+						<li><a href="#first" class="button special color1 circle icon fa-angle-right">Next</a></li>
+					</ul>
+				</div>
+				<div class="image filtered span-1-50" data-position="25% 25%">
+					<img src="../images/pic01.jpg" alt="" />
+				</div>
+			</section>
+
+			<!-- Panel (Spotlight) -->
+			<section class="panel spotlight medium right" id="first" ng-repeat="que in questions | filter:query">
+				<div class="content">
+					<div style="display:flex;margin:5px;">
+						<h2 class="major">{{$index+1}}</h2>
+						<div class="tags-section" style="display: flex;    
+    height: 59px;
+    margin-top: 3px;
+    margin-left: 20px;">
+							<p class="tag" ng-repeat="tag in que.tags" style="border: 1px dashed #ccc;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: 5px;">{{tag}}</p>
+
+						</div>
+					</div>
+					<p>{{que.question}}</p>
+					<div ng-repeat="ans in que.answer">
+						<div class="field quarter" ng-hide="!(que.answer_type =='radio')">
+							<input type="radio" ng-model="answer" name="demo-priority" class="color1"></input>
+							<label for="demo-priority-high">{{ans}}</label>
+						</div>
+
+						<div class="field quarter" ng-hide="!(que.answer_type =='check')">
+							<input type="checkbox" name="demo-priority" class="color2"></input>
+							<label for="demo-priority-high">{{ans}}</label>
+						</div>
+					</div>
+
+					<div class="comment-section" style="    margin-top: 40px;">
+
+						<div style="display:flex;">
+							<h4>Explanations</h4>
+							<p style="font-size: 15px;
+    margin-left: 15px;">- first try your self then
+								<u ng-click="flip($index+1)" style="cursor:pointer;"><i>click to see answer</i></u>
+							</p>
+						</div>
+						<div class="comment-cage card flipped" id="{{$parent.$index+1}}_comment" ng-init="flip($parent.$index+1)" ng-click="flip($parent.$index+1)"
+						    ng-repeat="comment in que.comments" style="    display: flex;justify-content: flex-start;    display: flex;
+    justify-content: flex-start;
+    background: #fff;
+    padding: 10px;
+    color: #000;
+    border-radius: 3px;    margin: 3px;">
+							<div style="font-size: 16px;margin-left:20px;font-style: italic;"> {{comment.content}}</div>
+						</div>
+
+					</div>
+				</div>
+
+
+
+				<div class="image filtered tinted" data-position="top left">
+					<img src="../images/pic02.jpg" alt="" />
+				</div>
+
+
+			</section>
+
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/skel.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
